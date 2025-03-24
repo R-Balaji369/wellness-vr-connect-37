@@ -1,3 +1,4 @@
+
 import React, { useEffect } from "react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
@@ -9,7 +10,7 @@ import UserWellbeing from "@/components/sections/UserWellbeing";
 import ServiceCard from "@/components/ui/ServiceCard";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { Smartphone, Brain } from "lucide-react";
+import { Headphones, Smartphone, Brain } from "lucide-react";
 import AnimatedGradientText from "@/components/ui/AnimatedGradientText";
 
 const Index: React.FC = () => {
@@ -43,7 +44,7 @@ const Index: React.FC = () => {
               </p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 justify-center mx-auto max-w-4xl">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <ServiceCard
                 title="Basic Therapy"
                 description="App-based music and aroma guidance for relaxation and stress reduction."
@@ -57,6 +58,22 @@ const Index: React.FC = () => {
                   "Follow-up wellness plan"
                 ]}
                 icon={<Smartphone size={24} />}
+              />
+              
+              <ServiceCard
+                title="VR Therapy"
+                description="Immersive virtual reality experiences guided by a certified therapist."
+                price="$149"
+                duration="90 minutes"
+                features={[
+                  "Full VR equipment provided",
+                  "Customized virtual environments",
+                  "Therapist-guided session",
+                  "Aroma therapy integration",
+                  "Digital progress tracking"
+                ]}
+                icon={<Headphones size={24} />}
+                popular={true}
               />
               
               <ServiceCard
