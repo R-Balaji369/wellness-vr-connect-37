@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
@@ -18,9 +17,12 @@ import {
 import StepIndicator from "@/components/ui/StepIndicator";
 import TherapistCard from "@/components/ui/TherapistCard";
 import { toast } from "@/components/ui/use-toast";
+import BookingReceipt from "@/components/ui/BookingReceipt";
 
 const Booking = () => {
   const [step, setStep] = useState(1);
+  const [showReceipt, setShowReceipt] = useState(false);
+  const [bookingNumber, setBookingNumber] = useState("");
   const [bookingData, setBookingData] = useState({
     service: "",
     date: undefined as Date | undefined,
@@ -31,6 +33,7 @@ const Booking = () => {
     phone: "",
     address: "",
     notes: "",
+    price: "",
   });
 
   const therapists = [
@@ -72,6 +75,14 @@ const Booking = () => {
 
   const handleChange = (field: string, value: any) => {
     setBookingData({ ...bookingData, [field]: value });
+    
+    if (field === "service") {
+      let price = "";
+      if (value === "basic") price = "$49";
+      if (value === "vr") price = "$89";
+      if (value === "premium") price = "$129";
+      setBookingData(prev => ({ ...prev, price }));
+    }
   };
 
   const handleDateSelect = (date: Date | undefined) => {
@@ -137,16 +148,62 @@ const Booking = () => {
     }
   };
 
+  const generateBookingNumber = () => {
+    const year = new Date().getFullYear();
+    const random = Math.floor(10000 + Math.random() * 90000);
+    return `WB-${year}-${random}`;
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    
+    const newBookingNumber = generateBookingNumber();
+    setBookingNumber(newBookingNumber);
+    
     toast({
       title: "Booking Confirmed!",
-      description: "You will receive a confirmation email shortly.",
+      description: "Your session has been booked successfully.",
     });
-    // In a real app, here we would send the booking data to the server
-    console.log("Booking data:", bookingData);
-    // Normally would redirect to a confirmation page
+    
+    setShowReceipt(true);
+    
+    console.log("Booking data:", bookingData, "Booking number:", newBookingNumber);
   };
+
+  if (showReceipt) {
+    return (
+      <>
+        <Navbar />
+        <main className="container mx-auto px-4 py-12">
+          <section className="mb-12 text-center">
+            <h1 className="text-4xl font-bold mb-6">
+              <AnimatedGradientText>Booking Confirmed</AnimatedGradientText>
+            </h1>
+            <p className="text-xl text-gray-700 max-w-3xl mx-auto mb-8">
+              Thank you for booking your session with us. Here's your booking receipt.
+            </p>
+          </section>
+          
+          <div className="max-w-4xl mx-auto mb-12">
+            <BookingReceipt 
+              bookingData={{
+                ...bookingData,
+                bookingNumber: bookingNumber
+              }}
+            />
+          </div>
+          
+          <div className="max-w-2xl mx-auto text-center mb-12">
+            <p className="text-gray-600 mb-4">
+              A confirmation email has been sent to {bookingData.email}.<br />
+              If you have any questions, please contact our support team.
+            </p>
+          </div>
+        </main>
+        <Footer />
+      </>
+    );
+  }
 
   return (
     <>
@@ -224,7 +281,6 @@ const Booking = () => {
                     onSelect={handleDateSelect}
                     className="rounded-md border"
                     disabled={(date) => {
-                      // Disable past dates and weekends in this example
                       const today = new Date();
                       today.setHours(0, 0, 0, 0);
                       return date < today || date.getDay() === 0;
