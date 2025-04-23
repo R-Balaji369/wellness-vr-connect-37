@@ -1,8 +1,9 @@
+
 import React, { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import AnimatedGradientText from "@/components/ui/AnimatedGradientText";
-import { ArrowRight, Apple, Banana, Carrot, Cherry, Grape, LeafyGreen, Nut } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 const Hero: React.FC = () => {
   const imageRef = useRef<HTMLDivElement>(null);
@@ -31,22 +32,38 @@ const Hero: React.FC = () => {
       <div className="absolute bottom-1/4 left-1/4 w-64 h-64 rounded-full bg-gradient-to-br from-accent/20 to-accent/40 blur-3xl opacity-40 animate-float animation-delay-500" />
 
       <div className="container mx-auto px-6 z-10">
-        {/* Food Icons Grid */}
+        {/* Food Images Grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12 max-w-3xl mx-auto">
           <div className="glass-card flex flex-col items-center gap-2 p-6 animate-fade-in">
-            <Apple className="w-12 h-12 text-wellness-600" />
+            <img 
+              src="https://images.unsplash.com/photo-1519996529931-28324d5a630e?w=500&h=500&fit=crop" 
+              alt="Fresh Fruits" 
+              className="w-full h-48 object-cover rounded-lg"
+            />
             <span className="text-sm font-medium text-wellness-700">Fresh Fruits</span>
           </div>
           <div className="glass-card flex flex-col items-center gap-2 p-6 animate-fade-in animation-delay-100">
-            <LeafyGreen className="w-12 h-12 text-wellness-600" />
+            <img 
+              src="https://images.unsplash.com/photo-1540420773420-3366772f4999?w=500&h=500&fit=crop" 
+              alt="Green Vegetables" 
+              className="w-full h-48 object-cover rounded-lg"
+            />
             <span className="text-sm font-medium text-wellness-700">Green Vegetables</span>
           </div>
           <div className="glass-card flex flex-col items-center gap-2 p-6 animate-fade-in animation-delay-200">
-            <Nut className="w-12 h-12 text-wellness-600" />
+            <img 
+              src="https://images.unsplash.com/photo-1573851552177-7e88fb188cc9?w=500&h=500&fit=crop" 
+              alt="Nuts & Seeds" 
+              className="w-full h-48 object-cover rounded-lg"
+            />
             <span className="text-sm font-medium text-wellness-700">Nuts & Seeds</span>
           </div>
           <div className="glass-card flex flex-col items-center gap-2 p-6 animate-fade-in animation-delay-300">
-            <Cherry className="w-12 h-12 text-wellness-600" />
+            <img 
+              src="https://images.unsplash.com/photo-1596073419667-9d77d59f033f?w=500&h=500&fit=crop" 
+              alt="Dried Fruits" 
+              className="w-full h-48 object-cover rounded-lg"
+            />
             <span className="text-sm font-medium text-wellness-700">Dried Fruits</span>
           </div>
         </div>
