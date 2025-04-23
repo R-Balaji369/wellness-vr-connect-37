@@ -1,3 +1,4 @@
+
 import React, { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -72,21 +73,6 @@ const Hero: React.FC = () => {
                 Explore Services
               </Link>
             </Button>
-          </div>
-        </div>
-        
-        {/* Right side image */}
-        <div 
-          ref={imageRef} 
-          className="w-full lg:w-1/2 relative animate-blur-in"
-        >
-          <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl">
-            <img 
-              src="https://images.unsplash.com/photo-1626179831847-06504dae3f90?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
-              alt="VR Therapy Session" 
-              className="w-full h-auto rounded-2xl object-cover transform transition-transform duration-700 hover:scale-105"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent rounded-2xl" />
           </div>
         </div>
       </div>
