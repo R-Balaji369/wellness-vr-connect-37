@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -88,31 +87,6 @@ const Hero: React.FC = () => {
               className="w-full h-auto rounded-2xl object-cover transform transition-transform duration-700 hover:scale-105"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent rounded-2xl" />
-          </div>
-          
-          {/* Floating elements */}
-          <div className="absolute -top-8 -left-8 bg-white rounded-xl p-4 shadow-lg animate-float">
-            <div className="flex items-center gap-2">
-              <div className="w-10 h-10 rounded-full bg-wellness-100 flex items-center justify-center">
-                <span className="text-wellness-600 text-xl">😌</span>
-              </div>
-              <div>
-                <p className="text-wellness-800 font-medium">Stress Reduction</p>
-                <p className="text-wellness-500 text-sm">-65% reported</p>
-              </div>
-            </div>
-          </div>
-          
-          <div className="absolute -bottom-8 -right-8 bg-white rounded-xl p-4 shadow-lg animate-float animation-delay-500">
-            <div className="flex items-center gap-2">
-              <div className="w-10 h-10 rounded-full bg-wellness-100 flex items-center justify-center">
-                <span className="text-wellness-600 text-xl">🧠</span>
-              </div>
-              <div>
-                <p className="text-wellness-800 font-medium">Mental Clarity</p>
-                <p className="text-wellness-500 text-sm">+82% improved</p>
-              </div>
-            </div>
           </div>
         </div>
       </div>
