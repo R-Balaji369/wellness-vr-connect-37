@@ -33,38 +33,57 @@ const Hero: React.FC = () => {
 
       <div className="container mx-auto px-6 z-10">
         {/* Food Images Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12 max-w-3xl mx-auto">
-          <div className="glass-card flex flex-col items-center gap-2 p-6 animate-fade-in">
-            <img 
-              src="https://images.unsplash.com/photo-1519996529931-28324d5a630e?w=500&h=500&fit=crop" 
-              alt="Fresh Fruits" 
-              className="w-full h-48 object-cover rounded-lg"
-            />
-            <span className="text-sm font-medium text-wellness-700">Fresh Fruits</span>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-16 max-w-4xl mx-auto">
+          <div className="group relative overflow-hidden rounded-2xl shadow-md transition-all duration-300 hover:shadow-xl">
+            <div className="aspect-square overflow-hidden">
+              <img 
+                src="https://images.unsplash.com/photo-1519996529931-28324d5a630e?w=500&h=500&fit=crop" 
+                alt="Fresh Fruits" 
+                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+              />
+            </div>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <span className="absolute bottom-4 left-4 text-white font-medium">Fresh Fruits</span>
+            </div>
           </div>
-          <div className="glass-card flex flex-col items-center gap-2 p-6 animate-fade-in animation-delay-100">
-            <img 
-              src="https://images.unsplash.com/photo-1540420773420-3366772f4999?w=500&h=500&fit=crop" 
-              alt="Green Vegetables" 
-              className="w-full h-48 object-cover rounded-lg"
-            />
-            <span className="text-sm font-medium text-wellness-700">Green Vegetables</span>
+
+          <div className="group relative overflow-hidden rounded-2xl shadow-md transition-all duration-300 hover:shadow-xl">
+            <div className="aspect-square overflow-hidden">
+              <img 
+                src="https://images.unsplash.com/photo-1540420773420-3366772f4999?w=500&h=500&fit=crop" 
+                alt="Green Vegetables" 
+                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+              />
+            </div>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <span className="absolute bottom-4 left-4 text-white font-medium">Green Vegetables</span>
+            </div>
           </div>
-          <div className="glass-card flex flex-col items-center gap-2 p-6 animate-fade-in animation-delay-200">
-            <img 
-              src="https://images.unsplash.com/photo-1573851552177-7e88fb188cc9?w=500&h=500&fit=crop" 
-              alt="Nuts & Seeds" 
-              className="w-full h-48 object-cover rounded-lg"
-            />
-            <span className="text-sm font-medium text-wellness-700">Nuts & Seeds</span>
+
+          <div className="group relative overflow-hidden rounded-2xl shadow-md transition-all duration-300 hover:shadow-xl">
+            <div className="aspect-square overflow-hidden">
+              <img 
+                src="https://images.unsplash.com/photo-1573851552177-7e88fb188cc9?w=500&h=500&fit=crop" 
+                alt="Nuts & Seeds" 
+                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+              />
+            </div>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <span className="absolute bottom-4 left-4 text-white font-medium">Nuts & Seeds</span>
+            </div>
           </div>
-          <div className="glass-card flex flex-col items-center gap-2 p-6 animate-fade-in animation-delay-300">
-            <img 
-              src="https://images.unsplash.com/photo-1596073419667-9d77d59f033f?w=500&h=500&fit=crop" 
-              alt="Dried Fruits" 
-              className="w-full h-48 object-cover rounded-lg"
-            />
-            <span className="text-sm font-medium text-wellness-700">Dried Fruits</span>
+
+          <div className="group relative overflow-hidden rounded-2xl shadow-md transition-all duration-300 hover:shadow-xl">
+            <div className="aspect-square overflow-hidden">
+              <img 
+                src="https://images.unsplash.com/photo-1596073419667-9d77d59f033f?w=500&h=500&fit=crop" 
+                alt="Dried Fruits" 
+                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+              />
+            </div>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <span className="absolute bottom-4 left-4 text-white font-medium">Dried Fruits</span>
+            </div>
           </div>
         </div>
 
